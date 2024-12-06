@@ -24,7 +24,9 @@ export default function HomeScreen({ navigation }) {
             <Text style={[styles.login, styles.entryBtn]}>Login</Text>
           </View>
         </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => navigation.navigate("Register")}>
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate("Register")}
+        >
           <View style={[styles.entryBtnContainer, styles.registerContainer]}>
             <Text style={[styles.register, styles.entryBtn]}>Register</Text>
           </View>
@@ -63,8 +65,8 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     textAlign: "center",
-    fontSize: 20,
-    fontFamily: "Montserrat",
+    fontSize: 16,
+    fontFamily: "Montserrat-Medium",
     color: "white",
     paddingBottom: 10,
   },
@@ -76,6 +78,6 @@ const styles = StyleSheet.create({
   },
   loginContainer: { backgroundColor: "#d9d9d9" },
   registerContainer: { backgroundColor: "#3f202e" },
-  entryBtn: { textAlign: "center", fontSize: 30 },
+  entryBtn: { fontFamily: "Fredoka-Medium", textAlign: "center", fontSize: 30 },
   register: { color: "white" },
 });

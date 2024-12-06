@@ -1,8 +1,19 @@
 import React from "react";
 import { StatusBar, View, StyleSheet, Image } from "react-native";
 import AppNavigator from "./appNavigator";
+import { useFonts } from "expo-font";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    "Fredoka-SemiBold": require("./assets/fonts/Fredoka-SemiBold.ttf"),
+    "Fredoka-Regular": require("./assets/fonts/Fredoka-Regular.ttf"),
+    "Fredoka-Medium": require("./assets/fonts/Fredoka-Medium.ttf"),
+    "Montserrat-Bold": require("./assets/fonts/Montserrat-Bold.ttf"),
+    "Montserrat-Regular": require("./assets/fonts/Montserrat-Regular.ttf"),
+    "Montserrat-Medium": require("./assets/fonts/Montserrat-Medium.ttf"),
+  });
+  if (!fontsLoaded) return;
+
   return (
     <View style={styles.container}>
       <StatusBar />

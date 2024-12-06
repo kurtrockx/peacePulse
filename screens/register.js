@@ -58,7 +58,9 @@ export default function RegisterScreen({ navigation }) {
         </View>
         <Text style={styles.forgotText}>Remember Me</Text>
       </View>
-      <TouchableWithoutFeedback onPress={() => navigation.navigate("RegisteredUser")}>
+      <TouchableWithoutFeedback
+        onPress={() => navigation.navigate("RegisteredUser")}
+      >
         <View style={styles.registerBtn}>
           <Text style={styles.registerText}>Register</Text>
         </View>
@@ -109,6 +111,7 @@ const styles = StyleSheet.create({
     aspectRatio: 1 / 1,
   },
   inputField: {
+    fontFamily: "Montserrat-Regular",
     paddingVertical: 0,
     color: "black",
     flex: 1,
@@ -118,12 +121,13 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingVertical: 10,
     borderRadius: 20,
-    backgroundColor: "#d6b2c3",
+    backgroundColor: "#a55379",
   },
   registerText: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontFamily: "Montserrat-Bold",
     textAlign: "center",
+    color: "white",
   },
   loginTextContainer: {
     color: "#45413C",

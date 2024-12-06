@@ -49,15 +49,16 @@ const styles = StyleSheet.create({
   header: {
     marginTop: 40,
     fontSize: 36,
-    fontWeight: "bold",
+    fontFamily: "Fredoka-SemiBold",
     textAlign: "center",
     color: "#45413C",
   },
   subText: {
+    fontFamily: 'Fredoka-Regular',
     fontSize: 20,
     textAlign: "center",
     color: "#45413C",
-    marginBottom: 100
+    marginBottom: 100,
   },
   successfulLoginBtn: {
     width: "100%",
@@ -69,8 +70,9 @@ const styles = StyleSheet.create({
   },
   successfulLoginText: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontFamily: "Montserrat-Bold",
     color: "#A55379",
+    width: "100%",
     textAlign: "center",
   },
   rightIcon: {

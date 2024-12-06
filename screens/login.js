@@ -44,7 +44,9 @@ export default function LoginScreen({ navigation }) {
       </TouchableWithoutFeedback>
       <Text style={styles.registerTextContainer}>
         Don't have an account yet?{" "}
-        <TouchableWithoutFeedback onPress={() => navigation.navigate("Register")}>
+        <TouchableWithoutFeedback
+          onPress={() => navigation.navigate("Register")}
+        >
           <Text style={styles.registerText}>Register!</Text>
         </TouchableWithoutFeedback>
       </Text>
@@ -88,6 +90,7 @@ const styles = StyleSheet.create({
     aspectRatio: 1 / 1,
   },
   inputField: {
+    fontFamily: "Montserrat-Regular",
     paddingVertical: 0,
     color: "black",
     flex: 1,
@@ -101,8 +104,9 @@ const styles = StyleSheet.create({
   },
   loginText: {
     fontSize: 24,
-    fontWeight: "bold",
+    fontFamily: "Montserrat-Bold",
     textAlign: "center",
+    color: "#3F202E",
   },
   registerTextContainer: {
     color: "#45413C",
