@@ -9,7 +9,7 @@ import {
   TextInput,
 } from "react-native";
 
-export default function LoginScreen({ navigation }) {
+export default function RegisterScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Image
@@ -17,6 +17,27 @@ export default function LoginScreen({ navigation }) {
         style={styles.logo}
       />
       <View style={styles.inputContainer}>
+        <View style={styles.inputFieldContainer}>
+          <Image
+            source={require("../assets/images/userIcon.png")}
+            style={styles.inputIcon}
+          />
+          <TextInput style={styles.inputField} placeholder="Username" />
+        </View>
+        <View style={styles.inputFieldContainer}>
+          <Image
+            source={require("../assets/images/birthdayIcon.png")}
+            style={styles.inputIcon}
+          />
+          <TextInput style={styles.inputField} placeholder="Birthday" />
+        </View>
+        <View style={styles.inputFieldContainer}>
+          <Image
+            source={require("../assets/images/phoneIcon.png")}
+            style={styles.inputIcon}
+          />
+          <TextInput style={styles.inputField} placeholder="Phone" />
+        </View>
         <View style={styles.inputFieldContainer}>
           <Image
             source={require("../assets/images/emailIcon.png")}
@@ -35,17 +56,17 @@ export default function LoginScreen({ navigation }) {
             style={styles.inputIcon}
           />
         </View>
-        <Text style={styles.forgotText}>Forgot Password?</Text>
+        <Text style={styles.forgotText}>Remember Me</Text>
       </View>
-      <TouchableWithoutFeedback onPress={() => navigation.navigate("LoggedIn")}>
-        <View style={styles.loginBtn}>
-          <Text style={styles.loginText}>Login</Text>
+      <TouchableWithoutFeedback onPress={() => navigation.navigate("RegisteredUser")}>
+        <View style={styles.registerBtn}>
+          <Text style={styles.registerText}>Register</Text>
         </View>
       </TouchableWithoutFeedback>
-      <Text style={styles.registerTextContainer}>
-        Don't have an account yet?{" "}
-        <TouchableWithoutFeedback onPress={() => navigation.navigate("Register")}>
-          <Text style={styles.registerText}>Register!</Text>
+      <Text style={styles.loginTextContainer}>
+        Already have an account?{" "}
+        <TouchableWithoutFeedback onPress={() => navigation.navigate("Login")}>
+          <Text style={styles.loginText}>Log In!</Text>
         </TouchableWithoutFeedback>
       </Text>
     </View>
@@ -63,14 +84,14 @@ const styles = StyleSheet.create({
     left: "50%",
     transform: [{ translateX: "-50%" }],
     width: 240,
-    height: 250,
-    marginTop: 64,
+    height: 200,
+    marginTop: 20,
   },
   inputContainer: {
     width: "100%",
     justifyContent: "center",
     gap: 5,
-    marginBottom: 40,
+    marginBottom: 20,
   },
   inputFieldContainer: {
     flexDirection: "row",
@@ -93,23 +114,23 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 40,
   },
-  loginBtn: {
+  registerBtn: {
     width: "100%",
     paddingVertical: 10,
     borderRadius: 20,
     backgroundColor: "#d6b2c3",
   },
-  loginText: {
+  registerText: {
     fontSize: 24,
     fontWeight: "bold",
     textAlign: "center",
   },
-  registerTextContainer: {
+  loginTextContainer: {
     color: "#45413C",
     marginVertical: 5,
     textAlign: "center",
   },
-  registerText: {
+  loginText: {
     fontWeight: "bold",
   },
   forgotText: {

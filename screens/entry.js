@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, Button, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet,
+  Image,
+  TouchableWithoutFeedback,
+} from "react-native";
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -11,7 +18,17 @@ export default function HomeScreen({ navigation }) {
         />
       </View>
       <View style={styles.bottomLayer}>
-        <Text style={styles.welcomeText}>Welcome to PeacePulse</Text>
+        <Text style={styles.welcomeText}>Welcome to PeacePulse!</Text>
+        <TouchableWithoutFeedback onPress={() => navigation.navigate("Login")}>
+          <View style={[styles.entryBtnContainer, styles.loginContainer]}>
+            <Text style={[styles.login, styles.entryBtn]}>Login</Text>
+          </View>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => navigation.navigate("Register")}>
+          <View style={[styles.entryBtnContainer, styles.registerContainer]}>
+            <Text style={[styles.register, styles.entryBtn]}>Register</Text>
+          </View>
+        </TouchableWithoutFeedback>
       </View>
     </View>
   );
@@ -28,7 +45,7 @@ const styles = StyleSheet.create({
     left: "50%",
     right: "50%",
     transform: [{ translateX: "-50%" }],
-    width: 200,
+    width: 240,
   },
   topLayer: {
     flex: 1,
@@ -40,10 +57,25 @@ const styles = StyleSheet.create({
     borderBottomStartRadius: 0,
     borderBottomEndRadius: 0,
     backgroundColor: "#a55379",
+    gap: 12,
+    paddingTop: 50,
+    paddingHorizontal: 30,
   },
   welcomeText: {
     textAlign: "center",
+    fontSize: 20,
     fontFamily: "Montserrat",
     color: "white",
+    paddingBottom: 10,
   },
+  entryBtnContainer: {
+    width: "100%",
+    height: 60,
+    borderRadius: 50,
+    justifyContent: "center",
+  },
+  loginContainer: { backgroundColor: "#d9d9d9" },
+  registerContainer: { backgroundColor: "#3f202e" },
+  entryBtn: { textAlign: "center", fontSize: 30 },
+  register: { color: "white" },
 });
